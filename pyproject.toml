@@ -1,0 +1,11 @@
+[project]
+name = "sampler"
+version = "0.1.0"
+description = "Fast balanced sequence sampling via a compiled Nim backend"
+authors = [{name = "Maxime Larocque", email = "maxime.larocque@randomschemes.com"}]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
