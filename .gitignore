@@ -1,7 +1,14 @@
-# Nim DLL files
-*.dll
+requirements.txt
+
+# compiled binaries
+# *.dll
+*.so
 *.exp
 *.lib
+*.dylib
+
+# nim artifacts
+nimcache/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
