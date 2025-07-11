@@ -18,13 +18,13 @@ def test_sample_balanced_shape_and_balance():
     size = 100
     m = 3
     seed = 123
-
     seq = sample_balanced(symbols, m=m, size=size, seed=seed)
 
     assert seq.shape == (size, len(symbols) * m), \
         f"Expected shape {(size, len(symbols) * m)}, got {seq.shape}"
 
     expected = sorted(symbols * m)
+
     for i, row in enumerate(seq):
         assert sorted(row.tolist()) == expected, f"Row {i} not balanced"
 

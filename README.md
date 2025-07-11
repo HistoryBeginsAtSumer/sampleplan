@@ -1,6 +1,6 @@
 # ⚖️ SamplePlan — Nim-Powered Balanced Sampler for Python
 
-[![TestPyPI](https://img.shields.io/badge/TestPyPI-package-informational?logo=pypi)](https://test.pypi.org/project/sampleplan/)
+[![PyPI version](https://img.shields.io/pypi/v/sampleplan.svg?logo=pypi)](https://pypi.org/project/sampleplan/)
 
 A blazing-fast compiled backend for generating balanced random sequences in
 Python. Built using [Nim](https://nim-lang.org/) and exposed via `ctypes`.
@@ -86,13 +86,13 @@ All pointer data is managed from the Python side using NumPy and ctypes.
 Compile the DLL using the Nim compiler and Microsoft's Visual C++ (MSVC)
 
 ```bash
-nim c --cc:vcc --app:lib --out:sampler/sampleplan.dll build/sampleplan.nim
+nim c --cc:vcc --app:lib --out:sampler/sampleplan.dll nimsrc/sampleplan.nim
 ```
 
 For faster release builds:
 
 ```bash
-nim c --cc:vcc --app:lib --out:sampleplan/sampleplan.dll -d:release build/sampleplan.nim
+nim c --cc:vcc --app:lib --out:sampleplan/sampleplan.dll -d:release nimsrc/sampleplan.nim
 ```
 
 This generates `sampleplan.dll`, which is required for Python execution.
@@ -105,12 +105,6 @@ To build the Python wheel:
 python -m build --wheel
 ```
 
-### Optional: Build a Windows-specific wheel manually using platform tag
-
-```bash
-python -m pip wheel --platform win_amd64 .
-```
-
 ## 📁 Project Structure
 
 ```bash
@@ -118,7 +112,7 @@ sampleplan/
 ├── __init__.py
 ├── sampleplan.py            # Python interface to the DLL
 ├── sampleplan.dll           # Compiled Nim shared library
-build/
+nimsrc/
 └── sampleplan.nim           # Nim source code (not distributed)
 tests/
 └── test_sampler.py
@@ -137,12 +131,21 @@ README.md
 
 MIT — use freely, cite kindly. See [LICENSE](LICENSE).
 
-## 📋 Design Quality Summary
+## 📜 Changelog
 
-| Area | Upgrade |
-|------|---------|
-| 🔍 Clarity | Clear description of purpose and how to use it |
-| 🧪 Example | Shows expected behavior with `sample_balanced` |
-| 📦 Structure | Documents project folder layout |
-| ⚠️ Platform | Transparently marks this as Windows-only |
-| 🧠 Professionalism | Adds a polished voice and structure for PyPI or GitHub |
+### [0.1.0] — Initial Release
+
+- First public version of `sampleplan`
+- Exposes `sample_balanced()` via a compiled Nim DLL
+- Supports any unique sequence of symbols (str/int)
+- Deterministic sampling with `seed`
+- 1D or 2D NumPy output based on `size` argument
+
+### [0.1.1] — 2025-07-11
+
+- Improved and clarified `README.md` formatting
+- Added Changelog section to `README.md`
+- Declared GitHub metadata in `pyproject.toml`
+- Removed unnecessary exclusions from `.gitignore`
+- Restored previously unversioned Nim source file `sampleplan.nim`
+- Refined reformatting in `test_sampler.py`

@@ -1,6 +1,6 @@
 [project]
 name = "sampleplan"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fast balanced sequence sampling via a compiled Nim backend"
 requires-python = ">=3.8"
 readme = "README.md"
@@ -43,3 +43,8 @@ dependencies = [
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[project.urls]
+"Homepage" = "https://github.com/HistoryBeginsAtSumer/sampleplan"
+"Source" = "https://github.com/HistoryBeginsAtSumer/sampleplan"
+"Tracker" = "https://github.com/HistoryBeginsAtSumer/sampleplan/issues"
