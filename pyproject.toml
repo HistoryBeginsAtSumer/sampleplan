@@ -4,7 +4,7 @@ version = "0.1.1"
 description = "Fast balanced sequence sampling via a compiled Nim backend"
 requires-python = ">=3.8"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 
 authors = [
   {name = "Maxime Larocque", email = "maxime.larocque@randomschemes.com"}
@@ -22,7 +22,6 @@ keywords = [
 
 classifiers = [
   "Development Status :: 3 - Alpha",
-  "License :: OSI Approved :: MIT License",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.8",
@@ -48,3 +47,6 @@ build-backend = "setuptools.build_meta"
 "Homepage" = "https://github.com/HistoryBeginsAtSumer/sampleplan"
 "Source" = "https://github.com/HistoryBeginsAtSumer/sampleplan"
 "Tracker" = "https://github.com/HistoryBeginsAtSumer/sampleplan/issues"
+
+[tool.setuptools]
+packages = ["sampleplan"]
